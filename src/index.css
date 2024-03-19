@@ -1,0 +1,23 @@
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0; /* Đảm bảo không có lề */
+  padding: 0; /* Đảm bảo không có padding */
+  display: flex;
+  justify-content: center;
+}
+
+html {
+  /* Set background là ảnh */
+  background-image: url('./assets/wallpaperflare.com_wallpaper_digital_art_x4_colored_toned_light_ai.jpg');
+  /* Căn giữa và căn lề cho background */
+  background-position: center;
+  background-size: cover;
+  /* Đảm bảo background chiếm toàn bộ kích thước của màn hình */
+  width: 100%;
+  height: 100%;
+  /* Padding và margin mặc định của html */
+  margin: 0;
+  padding: 0;
+}
