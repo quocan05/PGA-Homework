@@ -1,12 +1,8 @@
-import { ILoginParams, ILoginValidation } from "./components/LoginForm";
-import { ISignUpParams, ISignUpValidation } from "./components/SignUpForm";
+import { ILoginParams, ILoginValidation } from "../interfaces/login.interface";
 
 export const validEmailRegex: RegExp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
 const validateEmail = (email: string) => {
-    if (!email) {
-        return 'emailRequire'
-    }
     if (!validEmailRegex.test(email)) {
         return 'emailInvalid'
     }
@@ -17,21 +13,10 @@ const validatePassword = (password: string) => {
     if (!password) {
         return 'passwordRequire'
     }
-    if (password.length < 4) {
-        return 'minPasswordInvalid'
-    }
+    
     return '';
 };
 
-const validateRePassword = (password: string, repeatPassword: string) => {
-    if (!repeatPassword) {
-        return 'Please re-enter your password';
-    }
-    if (password !== repeatPassword) {
-        return 'Passwords does not match';
-    }
-    return '';
-};
 
 export const validateLogin = (values: ILoginParams): ILoginValidation => {
     return {

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ISignUpParams } from "../modules/auth/components/SignUpForm";
+import { ISignUpParams } from "../interfaces/signup.interface";
 
 export const SignUpAPI = async (params: ISignUpParams) => {
     try {

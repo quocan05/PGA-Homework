@@ -1,5 +1,4 @@
 import axios from "axios";
-import { ISignUpParams } from "../modules/auth/components/SignUpForm";
 
 export const getCountryAPI = async () => {
 

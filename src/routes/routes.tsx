@@ -1,20 +1,26 @@
 import { createBrowserRouter } from "react-router-dom";
-import { LoginPage } from "../modules/auth/pages/LoginPage";
-import { HomePage } from "../modules/auth/pages/HomePage";
-import SignUpPage from "../modules/auth/pages/SignUpPage";
+import { LoginPage } from "../pages/auth/LoginPage";
+import { HomePage } from "../pages/home/HomePage";
+import SignUpPage from "../pages/auth/SignUpPage";
+import { RoutePaths } from "./routes-constant";
+import ErrorPage from "../pages/error/errorPage";
 export const router = createBrowserRouter([
-    {
-        path: '/',
-        element: <HomePage />
-    },
+  {
+    path: RoutePaths.HOME,
+    element: <HomePage />,
+  },
 
-    {
-        path: '/login',
-        element: <LoginPage />
-    },
+  {
+    path: RoutePaths.LOGIN,
+    element: <LoginPage />,
+  },
 
-    {
-        path: '/signup',
-        element: <SignUpPage />
-    }
-])
+  {
+    path: RoutePaths.SIGNUP,
+    element: <SignUpPage />,
+  },
+  {
+    path: RoutePaths.NOT_INCLUDE,
+    element: <ErrorPage />,
+  },
+]);

@@ -1,5 +1,5 @@
 import axios from "axios"
-import { ILoginParams } from "../modules/auth/components/LoginForm";
+import { ILoginParams } from "../interfaces/login.interface";
 
 export const LoginAPI = async (params: ILoginParams) => {
     try {

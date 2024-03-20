@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from "react";
-import SignUpForm, { ISignUpParams } from "../components/SignUpForm";
-
+import SignUpForm from "../../components/signUpForm/SignUpForm";
+import { ISignUpParams } from "../../interfaces/signup.interface";
 const SignUpPage = () => {
   const [loading, setLoading] = useState(false);
   const [errMsg, setErrMsg] = useState("");
@@ -13,7 +13,7 @@ const SignUpPage = () => {
     setErrMsg("");
     setLoading(true);
   }, []);
-  return <SignUpForm onSignUp={onSignUp} loading={false} errMsg={""}  />;
+  return <SignUpForm onSignUp={onSignUp} loading={false} errMsg={""} />;
 };
 
 export default SignUpPage;

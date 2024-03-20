@@ -1,7 +1,8 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { ILoginParams, LoginForm } from "../components/LoginForm.tsx";
-import "../../../assets/LoginPage.css";
+import { LoginForm } from "../../components/loginForm/LoginForm.tsx";
 import { useNavigate } from "react-router";
+import { ILoginParams } from "../../interfaces/login.interface.ts";
+import AuthLayout from "../../layouts/auth/AuthLayout.tsx";
 export const LoginPage = () => {
   const [loading, setLoading] = useState(false);
   const [errMsg, setErrMsg] = useState("");
@@ -11,7 +12,6 @@ export const LoginPage = () => {
       setErrMsg("");
       setLoading(false);
     };
-    console.log("check values >>>>>>", values);
     setErrMsg("");
     setLoading(true);
   }, []);
@@ -24,8 +24,10 @@ export const LoginPage = () => {
     }
   }, []);
   return (
-    <div className="background-page">
-      <LoginForm onLogin={onLogin} loading={false} errMsg={""} />
-    </div>
+    <AuthLayout>
+      <div className="background-page">
+        <LoginForm onLogin={onLogin} loading={false} errMsg={""} />
+      </div>
+    </AuthLayout>
   );
 };
